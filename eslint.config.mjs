@@ -10,7 +10,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"), // remove next/typescript for deployment to vercel
+  ...compat.extends("next/core-web-vitals"), // "next/typescript" remove next/typescript for deployment to vercel
 ];
 
 export default eslintConfig;
