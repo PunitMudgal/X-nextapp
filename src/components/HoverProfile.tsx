@@ -1,6 +1,5 @@
 import React from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
-import { Card } from "./ui/card";
 import AvatarComponent from "./AvatarComponent";
 import { Button } from "./ui/button";
 

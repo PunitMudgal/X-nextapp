@@ -1,13 +1,9 @@
 import React from "react";
 import Image from "./Image";
-import Link from "next/link";
 import PostInteractions from "./PostInteractions";
 // Riley Reign. Claudia Garcia. Krystal Swift. Nikole Nash
-import repost from "../../public/svg/repost.svg";
-import NextImage from "next/image";
 import { formatTimeTo12Hour } from "@/constants/TimeAgo";
 import Avatar from "./AvatarComponent";
-import { Ellipsis } from "lucide-react";
 import PostMenuActions from "./PostMenuActions";
 import HoverProfile from "./HoverProfile";
 
@@ -47,7 +43,7 @@ const Post = ({
             h={600}
             className="rounded-lg"
           />
-
+          {type}
           {/* post buttons */}
           <PostInteractions />
         </div>
