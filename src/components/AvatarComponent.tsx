@@ -1,5 +1,8 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useUser } from "@clerk/nextjs";
 import { CircleUserRound } from "lucide-react";
+import Image from "next/image";
 
 type ImageType = {
   size?: number;
@@ -7,6 +10,9 @@ type ImageType = {
 };
 
 const AvatarComponent = ({ size, className }: ImageType) => {
+  const { user } = useUser();
+  if (!user) return null;
+
   return (
     <Avatar
       style={{ height: `${size}px`, width: `${size}px` }}
@@ -14,11 +20,11 @@ const AvatarComponent = ({ size, className }: ImageType) => {
     >
       <AvatarImage
         className="h-full w-full object-cover"
-        src="https://github.com/shadcn.png"
+        src={user.imageUrl || ""}
         alt="avatar"
       />
       <AvatarFallback>
-        <CircleUserRound size={size} />
+        <CircleUserRound className="h-full w-full" />
       </AvatarFallback>
     </Avatar>
   );
